@@ -1,6 +1,6 @@
-# H.A.I.S.O – Smart Desktop Assistant
+# H.A.I.S.O – Desktop Assistant
 
-**H.A.I.S.O (Hayat Asistanı)** is a multilingual, lightweight, and user-friendly Kivy-based desktop assistant. It provides a simple yet powerful interface with functionalities such as breathing exercises, weather forecast, system cleaner, shutdown scheduler, reminders, and more — all in Turkish.
+**H.A.I.S.O** is a multilingual, lightweight, and user-friendly Kivy-based desktop assistant. It provides a simple yet powerful interface with functionalities such as breathing exercises, weather forecast, system cleaner, shutdown scheduler, reminders, and more.
 
 ---
 
@@ -41,7 +41,7 @@
 ### `ui.kv`
 
 - Declares UI layout using Kivy language.
-- Left panel: command buttons (`Nefes Egzersizi`, `Hava Durumu`, etc.).
+- Left panel: command buttons
 - Right panel: displays the current user command and assistant's response.
 - Custom button style (`HoverButton`) defined for uniform look.
 
@@ -52,7 +52,7 @@
 - Central screen logic.
 - Initializes greeting message based on time.
 - Handles button clicks and input text.
-- Dynamically calls the correct command function based on the user's input (`yazili_girdi_isle()`).
+- Dynamically calls the correct command function based on the user's input.
 - Uses callbacks and `Clock.schedule_once()` to update UI from threads.
 
 ---
@@ -62,9 +62,9 @@
 - Runs a guided 4-7-8 breathing exercise in a background thread.
 - Uses countdowns and calming messages via callback.
 - Example steps:
-  - "Take a deep breath" (4 seconds)
-  - "Hold your breath" (7 seconds)
-  - "Exhale slowly" (8 seconds)
+- "Take a deep breath" (4 seconds)
+- "Hold your breath" (7 seconds)
+- "Exhale slowly" (8 seconds)
 
 ---
 
@@ -81,15 +81,14 @@
 ### `weather.py`
 
 - Uses OpenWeatherMap API (`appid` required).
-- Accepts city names from input or uses "Bursa" as default.
-- Handles Turkish spelling errors (e.g., "vursa" → "bursa").
+- Accepts city names from input.
 - Returns current temperature and weather description.
 
 ---
 
 ### `clock.py`
 
-- Returns formatted current time and date (e.g., "23 Temmuz 2025, Çarşamba").
+- Returns formatted current time and date.
 
 ---
 
@@ -104,15 +103,12 @@
 ### `reminder.py`
 
 - Opens a popup where users enter:
-  - Duration (in minutes)
-  - Reminder message
+- Duration (in minutes)
+- Reminder message
 - After countdown, plays `ding.mp3` and shows message popup.
 
 ---
 
 ### `shutdown.py`
 
-- Opens popup to schedule a Windows shutdown using the command:
-
-  ```bash
-  shutdown /s /t [seconds]
+- Opens popup to schedule a Windows shutdown.
